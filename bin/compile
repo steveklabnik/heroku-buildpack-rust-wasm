@@ -89,7 +89,8 @@ cd $BUILD_DIR
 rm -rf target/
 
 # app specific build here
-cargo build --manifest-path=semver-wasm/Cargo.toml --release --target=wasm32-unknown-unknown
+cargo build --manifest-path=semver-wasm/Cargo.toml --release --target=wasm32-unknown-unknown --verbose
+
 wasm-gc semver-wasm/target/wasm32-unknown-unknown/release/semver_wasm.wasm semver-wasm/target/wasm32-unknown-unknown/release/semver_wasm.wasm
 
 cargo build --manifest-path=server/Cargo.toml --release
