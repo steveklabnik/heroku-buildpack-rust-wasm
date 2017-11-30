@@ -85,7 +85,7 @@ export CARGO_TARGET_DIR="$CACHE_DIR/target"
 #export RUST_LOG="cargo::sources::git=debug"
 # To debug compiler and linking issues, add `--verbose`.
 echo "-----> Building application using Cargo"
-cd "$BUILD_DIR/$BUILD_PATH"
+cd $BUILD_DIR
 rm -rf target/
 
 # app specific build here
