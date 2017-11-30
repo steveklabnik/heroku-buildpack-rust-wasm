@@ -99,5 +99,4 @@ mv "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/semver_wasm.wasm" public/se
 
 mkdir -p target/release
 
-# app specific hack: add in /server
-find "$CARGO_TARGET_DIR/server/release" -maxdepth 1 -type f -executable -exec cp -a -t target/release {} \;
+find "$CARGO_TARGET_DIR/release" -maxdepth 1 -type f -executable -exec cp -a -t target/release {} \;
