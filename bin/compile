@@ -61,7 +61,7 @@ else
     rustup target add wasm32-unknown-unknown
 
     echo "-----> Installing wasm-gc"
-    cargo install wasm-gc
+    cargo install --git https://github.com/alexcrichton/wasm-gc
 
     rm rustup.sh
 fi
