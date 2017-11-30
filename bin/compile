@@ -91,17 +91,11 @@ rm -rf target/
 # app specific build here
 cargo build --manifest-path=semver-wasm/Cargo.toml --release --target=wasm32-unknown-unknown
 
-ls semver-wasm
-ls semver-wasm/target
-ls semver-wasm/target/wasm32-unknown-unknown/
-ls semver-wasm/target/wasm32-unknown-unknown/release/
-ls semver-wasm/target/wasm32-unknown-unknown/release/semver_wasm.wasm
-
-wasm-gc target/wasm32-unknown-unknown/release/semver_wasm.wasm target/wasm32-unknown-unknown/release/semver_wasm.wasm
+wasm-gc "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/semver_wasm.wasm" "$CARGO_TARGET_DIR/semver-wasm/target/wasm32-unknown-unknown/release/semver_wasm.wasm"
 
 cargo build --manifest-path=server/Cargo.toml --release
 
-mv target/wasm32-unknown-unknown/release/semver_wasm.wasm public/semver.wasm
+mv "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/semver_wasm.wasm" public/semver.wasm
 
 mkdir -p target/release
 
