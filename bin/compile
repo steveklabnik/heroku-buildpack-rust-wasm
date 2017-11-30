@@ -91,7 +91,6 @@ rm -rf target/
 # app specific build here
 cargo build --manifest-path=semver-wasm/Cargo.toml --release --target=wasm32-unknown-unknown
 
-ls target
 ls semver-wasm
 ls semver-wasm/target
 ls semver-wasm/target/wasm32-unknown-unknown/
